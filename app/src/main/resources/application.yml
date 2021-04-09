@@ -1,0 +1,22 @@
+server:
+  port: 9999
+
+application:
+  version: ${project.version}
+  name: ${project.name}
+  description: ${project.description}
+  artifact-id: ${project.artifactId}
+
+spring:
+  cache:
+    type: caffeine
+    caffeine:
+      spec: maximumSize=1000,expireAfterAccess=3600s
+
+  data:
+    mongodb:
+      host: \${MONGODB_HOST:localhost}
+      database: \${MONGODB_DATABASE:quaklog_db}
+      username: \${MONGODB_USERNAME:quaklog}
+      password: \${MONGODB_PASSWORD:123456}
+      authentication-database: admin

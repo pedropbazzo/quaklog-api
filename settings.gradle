@@ -1,0 +1,5 @@
+rootProject.name = 'Quaklog API'
+
+include "core"
+include "app"
+
